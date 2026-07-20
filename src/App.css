@@ -1,0 +1,129 @@
+/* 1. 전체 화면 스타일 및 중앙 정렬 */
+body {
+  background-color: #f7f9fa; /* 부드러운 연회색 배경 */
+  margin: 0;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 2. 타이틀 스타일 */
+h1 {
+  text-align: center;
+  color: #333d4b;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* 3. 카드들이 담기는 전체 컨테이너 (정렬 담당) */
+.card-container {
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row; /* 가로로 나열 */
+  gap: 25px; /* 카드 사이의 간격 */
+  justify-content: center;
+  flex-wrap: wrap; /* 화면 좁아지면 아래로 내려가게 */
+}
+
+/* 4. ⭐ 개별 카드 디자인 (그 전 깔끔한 스타일 그대로!) */
+.card {
+  background-color: #ffffff; /* 하얀색 기본 배경 */
+  border-radius: 20px; /* 조금 더 둥글게 */
+  padding: 28px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
+  border: 1px solid #eaeef2;
+  
+  /* 마우스 올렸을 때 부드럽게 변하는 효과 */
+  transition: all 0.3s ease-out; 
+}
+
+/* 카드 안의 이름 (h2) */
+.card h2 {
+  margin: 0 0 20px 0;
+  color: #191f28;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  position: relative; /* 밑줄 효과용 */
+}
+
+/* 기본 밑줄 (그레이) */
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px; /* 밑줄 길이 */
+  height: 3px;
+  background-color: #edf0f5; /* 기본 회색 */
+  border-radius: 2px;
+  transition: background-color 0.3s ease; /* 색상 변화 효과 */
+}
+
+/* 카드 안의 내용들 (나이, 취미) */
+.card p {
+  margin: 10px 0;
+  color: #4e5968;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* 기본 포인트 아이콘 점 (그레이) */
+.card p::before {
+  content: "• ";
+  color: #e0e0e0; /* 기본 연회색 */
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* ========================================= */
+/* ⭐ 카드별 개별 포인트 컬러 (마우스 오버시) ⭐ */
+/* ========================================= */
+
+/* [공통 호버 효과] 마우스 올리면 전체적으로 살짝 위로 & 그림자 진하게 */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 🌸 1. 예은이 카드 포인트 (핑크) */
+.card-예은:hover {
+  border-color: #ffb6c1; /* 테두리 핑크 */
+}
+.card-예은:hover h2::after {
+  background-color: #ff69b4; /* 밑줄 핑크 */
+}
+.card-예은:hover p::before {
+  color: #ff69b4; /* 포인트 점 핑크 */
+}
+
+
+/* ⚽ 2. 철수 카드 포인트 (블루) */
+.card-철수:hover {
+  border-color: #91d5ff; /* 테두리 블루 */
+}
+.card-철수:hover h2::after {
+  background-color: #1890ff; /* 밑줄 블루 */
+}
+.card-철수:hover p::before {
+  color: #1890ff; /* 포인트 점 블루 */
+}
+
+
+/* 📚 3. 영희 카드 포인트 (그린) */
+.card-영희:hover {
+  border-color: #b7eb8f; /* 테두리 그린 */
+}
+.card-영희:hover h2::after {
+  background-color: #52c41a; /* 밑줄 그린 */
+}
+.card-영희:hover p::before {
+  color: #52c41a; /* 포인트 점 그린 */
+}
